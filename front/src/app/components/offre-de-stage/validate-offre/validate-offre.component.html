@@ -1,0 +1,188 @@
+<!--<div class="container">-->
+<!--  <div class="row">-->
+<!--    <div class="col">-->
+<!--      <div *ngIf="offresDeStage" class="text-center">-->
+<!--        <h2>Liste des offres de stage non validees</h2>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        <table class="table">-->
+<!--          <thead class="text-white bg-dark">-->
+<!--          <tr>-->
+<!--            <th>Date de début</th>-->
+<!--            <th>Date de fin</th>-->
+<!--            <th>Poste</th>-->
+<!--            <th>Entreprise</th>-->
+<!--            <th>Actions</th>-->
+<!--          </tr>-->
+<!--          </thead>-->
+<!--          <tbody>-->
+<!--          <tr *ngFor="let offreDeStage of offresDeStage">-->
+<!--            <td>{{ offreDeStage.dateDebut | date }}</td>-->
+<!--            <td>{{ offreDeStage.dateFin | date }}</td>-->
+<!--            <td>{{ offreDeStage.poste }}</td>-->
+<!--            <td>{{ offreDeStage.entreprise }}</td>-->
+
+<!--            <td>-->
+<!--              <div class="btn-group">-->
+<!--                <button (click)="goToDetails(offreDeStage)" class="btn btn-warning" style="margin-right: 8px">-->
+<!--                  <i class="bi bi-book"></i>-->
+<!--                </button>-->
+<!--                <button (click)="handleValidateButton(offreDeStage)" class="btn btn-success" style="margin-right: 8px">-->
+<!--                  <i class="bi bi-check"></i>-->
+<!--                </button>-->
+<!--                <button (click)="handleRefuseButton(offreDeStage)" style="margin-right: 8px" class="btn btn-danger">-->
+<!--                  <i class="bi bi-trash"></i>-->
+<!--                </button>-->
+<!--              </div>-->
+<!--            </td>-->
+<!--          </tr>-->
+<!--          </tbody>-->
+<!--        </table>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-auto bg-light sticky-top">
+      <div
+        class="d-flex flex-sm-column flex-row flex-nowrap bg-light align-items-center sticky-top"
+      >
+        <ul
+          class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center align-items-center"
+        >
+          <li class="nav-item">
+            <a
+              href="/dashboard"
+              class="nav-link py-3 px-3 bg-light"
+              title="Home"
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+            >
+              <i class="bi-house fs-3"></i>
+            </a>
+          </li>
+          <!-- Repeat similar sections for other links -->
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm p-3 min-vh-100">
+      <div class="card">
+        <div class="row" align="center">
+          <h4>Valider les offres de stage</h4>
+        </div>
+      </div>
+      <div class="container">
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+          integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA="
+          crossorigin="anonymous"
+        />
+        <div class="container mt-3 mb-4">
+          <div class="col-lg-14 mt-4 mt-lg-0">
+            <div class="row">
+              <div class="col-md-12">
+                <div
+                  class="user-dashboard-info-box table-responsive mb-0 bg-white p-4 shadow-sm rounded-7"
+                >
+                  <table class="table manage-students-top mb-0">
+                    <thead>
+                      <tr>
+                        <th class="text-center"><b>#</b></th>
+                        <th class="text-center"><b>Date de début</b></th>
+                        <th class="text-center"><b>Date de fin</b></th>
+                        <th class="text-center"><b>Poste</b></th>
+                        <th class="text-center"><b>Entreprise</b></th>
+                        <th class="action text-right"><b>Action</b></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- Example row -->
+                      <tr class="students-list">
+                        <td class="text-center">1</td>
+                        <td class="text-center">2024-01-01</td>
+                        <td class="text-center">2024-06-30</td>
+                        <td class="text-center">Développeur</td>
+                        <td class="text-center">Entreprise XYZ</td>
+                        <td class="text-center">
+                          <ul
+                            class="list-unstyled mb-0 d-flex justify-content-end"
+                          >
+                            <li>
+                              <span
+                                id="boot-icon"
+                                class="bi bi-trash-fill"
+                                style="font-size: 1.2rem; color: rgb(255, 0, 0)"
+                              ></span>
+                            </li>
+                            <li>
+                              <span
+                                id="boot-icon"
+                                class="bi bi-check-fill"
+                                style="
+                                  font-size: 1.2rem;
+                                  color: rgb(73, 219, 32);
+                                "
+                              ></span>
+                            </li>
+                            <li>
+                              <span
+                                id="boot-icon"
+                                class="bi bi-eye-fill"
+                                style="font-size: 1.2rem; color: cornflowerblue"
+                              ></span>
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <!-- Repeat for additional rows -->
+                    </tbody>
+                  </table>
+                  <div class="row g-0 align-items-center pb-4 my-3">
+                    <div class="col-sm-6">
+                      <p class="mb-sm-0">Affichage de 1 à 10</p>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="float-sm-end">
+                        <ul class="pagination mb-sm-0">
+                          <li class="page-item disabled">
+                            <a href="#" class="page-link"
+                              ><i class="mdi mdi-chevron-left"></i
+                            ></a>
+                          </li>
+                          <li class="page-item active">
+                            <a href="#" class="page-link">1</a>
+                          </li>
+                          <li class="page-item">
+                            <a href="#" class="page-link">2</a>
+                          </li>
+                          <li class="page-item">
+                            <a href="#" class="page-link">3</a>
+                          </li>
+                          <li class="page-item">
+                            <a href="#" class="page-link">4</a>
+                          </li>
+                          <li class="page-item">
+                            <a href="#" class="page-link">5</a>
+                          </li>
+                          <li class="page-item">
+                            <a href="#" class="page-link"
+                              ><i class="mdi mdi-chevron-right"></i
+                            ></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
